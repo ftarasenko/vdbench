@@ -12,19 +12,23 @@ description: Stack that launches a single server
 parameters:
   public_network:
     type: string
-    default: public1
+    default: public1_net
   image:
     type: string
+    default: ubuntu16
     constraints:
       - custom_constraint: glance.image
   flavor:
     type: string
+    default: f1.vdbench
     constraints:
       - custom_constraint: nova.flavor
   key_name:
     type: string
+    default: ftarasenko
   volume_size:
     type: number  
+    default: 10
 
 resources:
 
@@ -49,10 +53,10 @@ resources:
     cloud_config:
       manage_etc_hosts: true
       runcmd:
-        - 'wget https://github.com/ftarasenko/vdbench/raw/master/vdbench50407.zip'
-        - 'wget https://raw.githubusercontent.com/ftarasenko/vdbench/master/workload10'
-        - 'unzip vdbench50407.zip'
-        - './vdbench -f workload10 -o out'
+        wget_vdbench: "wget https://github.com/ftarasenko/vdbench/raw/master/vdbench50407.zip"
+        wget_workload: https://raw.githubusercontent.com/ftarasenko/vdbench/master/workload10"
+        unzip_file: "unzip vdbench50407.zip"
+        run_vdbench: "./vdbench -f workload10 -o out"
       packages:
         - default-jre-headless
         - unzip
