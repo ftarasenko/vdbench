@@ -79,4 +79,4 @@ wd=WD_256K_Read_Sequential,sd=sd*,rdpct=100,seekpct=0,xfersize=256k
 *rd=run_256K_Read_Random,wd=WD_256K_Read_Random,iorate=max,elapsed=60,interval=1,pause=5
 *rd=run_256K_Read_Sequential,wd=WD_256K_Read_Sequential,iorate=max,elapsed=60,interval=1,pause=5
 
-rd=run_4K_RW,wd=WD_4K_Random*,iorate=max,elapsed=60,interval=1,pause=5
+rd=run_4K_RW,wd=WD_4K_Random*,iorate=max,elapsed=600,interval=1,pause=5
