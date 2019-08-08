@@ -54,7 +54,7 @@ resources:
       manage_etc_hosts: true
       runcmd:
         - wget https://github.com/ftarasenko/vdbench/raw/master/vdbench50407.zip
-        - https://raw.githubusercontent.com/ftarasenko/vdbench/master/workload10
+        - wget https://raw.githubusercontent.com/ftarasenko/vdbench/master/workload10
         - unzip vdbench50407.zip
         - ./vdbench -f workload10 -o out
       packages:
