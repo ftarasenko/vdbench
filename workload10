@@ -39,30 +39,30 @@
 
 *SD:    Storage Definitions
 sd=sd1,lun=/dev/vdb,threads=16,openflags=o_direct
-sd=sd1,lun=/dev/vdc,threads=16,openflags=o_direct
-sd=sd1,lun=/dev/vdd,threads=16,openflags=o_direct
-sd=sd1,lun=/dev/vde,threads=16,openflags=o_direct
-sd=sd1,lun=/dev/vdf,threads=16,openflags=o_direct
-sd=sd1,lun=/dev/vdg,threads=16,openflags=o_direct
-sd=sd1,lun=/dev/vdh,threads=16,openflags=o_direct
-sd=sd1,lun=/dev/vdi,threads=16,openflags=o_direct
-sd=sd1,lun=/dev/vdj,threads=16,openflags=o_direct
-sd=sd1,lun=/dev/vdk,threads=16,openflags=o_direct
+sd=sd2,lun=/dev/vdc,threads=16,openflags=o_direct
+sd=sd3,lun=/dev/vdd,threads=16,openflags=o_direct
+sd=sd4,lun=/dev/vde,threads=16,openflags=o_direct
+sd=sd5,lun=/dev/vdf,threads=16,openflags=o_direct
+sd=sd6,lun=/dev/vdg,threads=16,openflags=o_direct
+sd=sd7,lun=/dev/vdh,threads=16,openflags=o_direct
+sd=sd8,lun=/dev/vdi,threads=16,openflags=o_direct
+sd=sd9,lun=/dev/vdj,threads=16,openflags=o_direct
+sd=sd10,lun=/dev/vdk,threads=16,openflags=o_direct
 
 *WD:    Workload Definitions
-wd=WD_0.5K_Write_Random,sd=sd1,rdpct=0,seekpct=100,xfersize=512
-wd=WD_0.5K_Write_Sequential,sd=sd1,rdpct=0,seekpct=0,xfersize=512
-wd=WD_4K_Random_Write,sd=sd1,rdpct=0,seekpct=100,xfersize=4k
-wd=WD_4K_Write_Sequential,sd=sd1,rdpct=0,seekpct=0,xfersize=4k
-wd=WD_256K_Write_Random,sd=sd1,rdpct=0,seekpct=100,xfersize=256k
-wd=WD_256K_Write_Sequential,sd=sd1,rdpct=0,seekpct=0,xfersize=256k
+wd=WD_0.5K_Write_Random,sd=sd*,rdpct=0,seekpct=100,xfersize=512
+wd=WD_0.5K_Write_Sequential,sd=sd*,rdpct=0,seekpct=0,xfersize=512
+wd=WD_4K_Random_Write,sd=sd*,rdpct=0,seekpct=100,xfersize=4k
+wd=WD_4K_Write_Sequential,sd=sd*,rdpct=0,seekpct=0,xfersize=4k
+wd=WD_256K_Write_Random,sd=sd*,rdpct=0,seekpct=100,xfersize=256k
+wd=WD_256K_Write_Sequential,sd=sd*,rdpct=0,seekpct=0,xfersize=256k
 
-wd=WD_0.5K_Read_Random,sd=sd1,rdpct=100,seekpct=100,xfersize=512
-wd=WD_0.5K_Read_Sequential,sd=sd1,rdpct=100,seekpct=0,xfersize=512
-wd=WD_4K_Random_Read,sd=sd1,rdpct=100,seekpct=100,xfersize=4k
-wd=WD_4K_Read_Sequential,sd=sd1,rdpct=100,seekpct=0,xfersize=4k
-wd=WD_256K_Read_Random,sd=sd1,rdpct=100,seekpct=100,xfersize=256k
-wd=WD_256K_Read_Sequential,sd=sd1,rdpct=100,seekpct=0,xfersize=256k
+wd=WD_0.5K_Read_Random,sd=sd*,rdpct=100,seekpct=100,xfersize=512
+wd=WD_0.5K_Read_Sequential,sd=sd*,rdpct=100,seekpct=0,xfersize=512
+wd=WD_4K_Random_Read,sd=sd*,rdpct=100,seekpct=100,xfersize=4k
+wd=WD_4K_Read_Sequential,sd=sd*,rdpct=100,seekpct=0,xfersize=4k
+wd=WD_256K_Read_Random,sd=sd*,rdpct=100,seekpct=100,xfersize=256k
+wd=WD_256K_Read_Sequential,sd=sd*,rdpct=100,seekpct=0,xfersize=256k
 
 *RD:    Run Definitions
 *rd=run_0.5K_Write_Random,wd=WD_0.5K_Write_Random,iorate=max,elapsed=60,interval=1,pause=5
